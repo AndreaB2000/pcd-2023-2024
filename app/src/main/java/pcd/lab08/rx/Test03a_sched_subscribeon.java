@@ -15,7 +15,7 @@ public class Test03a_sched_subscribeon {
 		 * is done by the calling thread.
 		 * 
 		 */
-		Observable.just(100)	
+		Observable.just(10)	
 			.map(v -> { log("map 1 " + v); return v * v; })
 			.map(v -> { log("map 2 " + v); return v + 1; })
 			.subscribe(v -> {						
@@ -55,7 +55,7 @@ public class Test03a_sched_subscribeon {
 		 * warning: flatMap => no order in merging
 		 */
 
-		Flowable.range(1, 1000)
+		Flowable.range(1, 10)
 		  .flatMap(v ->
 		      Flowable.just(v)
 		        .subscribeOn(Schedulers.computation())
